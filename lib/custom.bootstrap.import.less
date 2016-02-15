@@ -57,7 +57,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          30px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -874,3 +874,15 @@
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
+
+body {
+  line-height: 40px;
+}
+
+
+/*@media (min-width: @screen-sm-min) {
+  body {
+      font-size: 42px;
+      line-height: 48px;
+  }
+}*/

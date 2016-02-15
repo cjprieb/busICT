@@ -22,12 +22,20 @@ Template.body.events({
       $('#route-'+id+'-icon').addClass('glyphicon-check').removeClass('glyphicon-unchecked');
       map.addLayer(routeLayers[id].layer);
     }
+    if ( $(".glyphicon-check").length > 0 ) {
+        $('#route-selector').hide();
+        $('#map').show();
+    }
+    else {
+        $('#route-selector').show();
+        $('#map').hide();        
+    }
   },
   "click .route-button": function (event) {
     var id = event.originalEvent.target.dataset.id;
     var layer = routeLayers[id].layer;
-    $('#route-selector').css('visibility', 'hidden');
-    $('#map').css('visibility', 'visible');
+    $('#route-selector').hide();
+    $('#map').show();
     map.addLayer(routeLayers[id].layer);
     $('#route-'+id+'-icon').addClass('glyphicon-check').removeClass('glyphicon-unchecked');
   }
@@ -54,7 +62,7 @@ Template.map.rendered = function() {
   })
 
   // Add bus stops to map
-  var lat, lon, title_text, coordinates;
+  /*var lat, lon, title_text, coordinates;
   stops.forEach(function(stop) {
     coordinates = stop.geojson.coordinates;
     lat = coordinates[1];
@@ -70,7 +78,7 @@ Template.map.rendered = function() {
     });
 
     L.marker([lat, lon], { title: title_text, icon: stopIcon }).addTo(map);
-  })
+  })*/
 
   // find current location then pan to location
   // Using geolocation api for browser location for now

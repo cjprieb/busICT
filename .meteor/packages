@@ -6,8 +6,7 @@
 
 meteor-platform
 bevanhunt:leaflet
-nemo64:bootstrap
+jquery
 less
-suxez:jasny-bootstrap
 http
-bootstrap
+nemo64:bootstrap
