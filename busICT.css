@@ -1,6 +1,10 @@
 .map {
-  display: none;
+    visibility: hidden;
   border: solid 1px black;
+}
+
+.navbar-brand {
+    font-size: 24px;
 }
 
 .container-fluid {
@@ -19,4 +23,8 @@
 
 .list-group-item {
   padding: .5em;
+}
+
+.panel-head {
+    padding: 10px 10px 0 10px;
 }

@@ -24,18 +24,18 @@ Template.body.events({
     }
     if ( $(".glyphicon-check").length > 0 ) {
         $('#route-selector').hide();
-        $('#map').show();
+        $('#map').css("visibility", "visible");
     }
     else {
         $('#route-selector').show();
-        $('#map').hide();        
+        $('#map').css("visibility", "hidden");        
     }
   },
   "click .route-button": function (event) {
     var id = event.originalEvent.target.dataset.id;
     var layer = routeLayers[id].layer;
     $('#route-selector').hide();
-    $('#map').show();
+    $('#map').css("visibility", "visible");
     map.addLayer(routeLayers[id].layer);
     $('#route-'+id+'-icon').addClass('glyphicon-check').removeClass('glyphicon-unchecked');
   }
@@ -62,7 +62,7 @@ Template.map.rendered = function() {
   })
 
   // Add bus stops to map
-  /*var lat, lon, title_text, coordinates;
+/*  var lat, lon, title_text, coordinates;
   stops.forEach(function(stop) {
     coordinates = stop.geojson.coordinates;
     lat = coordinates[1];
@@ -106,7 +106,7 @@ Template.map.rendered = function() {
   // viewable area then force a resize for the initial load
   $(function() {
     $(window).resize(function() {
-      $('#map').css('height', window.innerHeight - 51);
+      $('#map').css('height', window.innerHeight - 52);
       map.invalidateSize();
     });
     $(window).resize(); // trigger resize event
